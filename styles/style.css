@@ -6,7 +6,32 @@
 }
 
 .header_menu {
-    margin: 44px 36px 39px 26.52px;
+    font-family: Raleway-Regular, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.13px;
+    width: 391.48px; 
+    height: 22px; 
+    margin: 44px 36px 39px 26.52px; 
+    text-align: justify; 
+}
+
+.header_menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+li.header_menu-item {
+    list-style-type: circle;
+}
+
+li.header_menu-item_active {
+    list-style-type: none;
+}
+
+.header_menu-link {
+    text-underline-offset: 4px;
 }
 
 .header_logo-image {
@@ -15,7 +40,23 @@
 }
 
 .header_contacts {
+    font-family: Raleway-Regular, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24.3px;
     margin: 5px 25.48px 2px 184px;
+    width: 240.52px;
+    height: 98px;
+    word-wrap: break-word;
+}
+
+.header_contacts-number {
+    text-decoration: underline;
+}
+
+.header_contacts-mail {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .cover {
