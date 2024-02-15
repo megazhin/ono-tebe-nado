@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   padding: 92px 24px 96px;
 }
@@ -10,8 +10,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21.13px;
-  width: 391.48px; 
-  height: 22px; 
+  width: 391.48px;
   margin: 44px 36px 39px 26.52px; 
   text-align: justify; 
 }
@@ -53,7 +52,6 @@ li.header_menu-item_active {
   font-size: 18px;
   line-height: 24.3px;
   width: 240.52px;
-  height: 98px;
 }
 
 .address {
@@ -73,8 +71,7 @@ li.header_menu-item_active {
 .cover {
   position: relative;
   width: 1100px;
-  height: 757px;
-  margin-bottom: 179px;
+  min-height: 757px;
   background-position: center;
   background-image: url(../images/cover.jpg);
   background-repeat: no-repeat;
@@ -99,8 +96,13 @@ li.header_menu-item_active {
 }
 
 .aligned-text {
+  margin-top: 20px;
   display: block;
   letter-spacing: 30px;
+}
+
+.aligned-text:first-child {
+  margin-top: 0px;
 }
 
 .letter_spacing {
@@ -117,15 +119,11 @@ li.header_menu-item_active {
 }
 
 .text_center {
-  width: 369px;
-  height: 100px;
-  margin: 20px 345px 0px 286px;
   text-align: center;
   line-height: 100px;
 }
 
 .text_right {
-  margin-top: 20px;
   text-align: right;
   line-height: 100px;
 }
@@ -150,7 +148,7 @@ li.header_menu-item_active {
 .bet_button {
   width: 256px;
   height: 51px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background: transparent;
   font-family: Ralevay, sans-serif;
   font-weight: 500;
@@ -162,9 +160,8 @@ li.header_menu-item_active {
 }
 
 .lots {
-  margin:179px 24px 146px;
+  margin: 179px 24px 146px;
   width: 1052px;
-  height: 692px;
 }
 
 .title_lots {
@@ -181,25 +178,11 @@ li.header_menu-item_active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 25px;
 }
 
 ul.lots_card-list {
   list-style-type: none;
-}
-
-li.card_type_film {
-  min-height: 100%;
-  flex-grow: 1;
-}
-
-li.card_type_book {
-  min-height: 100%;
-  flex-grow: 1;
-}
-
-li.card_type_picture {
-  min-height: 100%;
-  flex-grow: 1;
 }
 
 .cards_link {
@@ -207,7 +190,7 @@ li.card_type_picture {
   text-decoration: none;
 }
 
-.card_type_all {
+.card_main_info {
   position: absolute;
   height: 100%;
   display: flex;
@@ -216,19 +199,30 @@ li.card_type_picture {
   text-align: start;
 }
 
-.card_type_film {
+.cards {
   position: relative;
   width: 334px;
-  height: 563px;
-  margin-right: 25px;
+  min-height: 563px;
+  flex-grow: 1;
 }
 
-.card_type_film-img {
+.cards_img {
   height: 100%;
   background-position: center;
-  background-image: url(../images/card-lot-01.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.card_img_type_film {
+  background-image: url(../images/card-lot-01.jpg);
+}
+
+.card_img_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+}
+
+.card_img_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
 }
 
 .card_title {
@@ -254,35 +248,6 @@ li.card_type_picture {
 }
 
 
-.card_type_book {
-  position: relative;
-  width: 334px;
-  height: 563px;
-  margin-right: 25px;
-}
-
-.card_type_book-img {
-  height: 100%;
-  background-position: center;
-  background-image: url(../images/card-lot-02.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.card_type_picture {
-  position: relative;
-  width: 334px;
-  height: 563px;
-}   
-
-.card_type_picture-img {
-  height: 100%;
-  background-position: center;
-  background-image: url(../images/card-lot-03.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .lots_more {
   margin-top: 30px;
   margin-left: 40px;
@@ -300,7 +265,6 @@ li.card_type_picture {
   grid-template-columns: 334px 1fr;
   column-gap: 25px;
   width: 1052px;
-  height: 595px;
   margin: 0px 24px 0px;
 }
 
@@ -309,7 +273,6 @@ li.card_type_picture {
   grid-template-columns: 1fr;
   justify-content: center;
   width: 334px;
-  height: 563px;
 }
 
 .about_logo {
@@ -354,16 +317,16 @@ li.card_type_picture {
   font-size: 20px;
   line-height: 24px;
   text-align: start;
-}
-
-.section_about_text_with_margin {
   margin-right: 5px;
   margin-bottom: 24px;
 }
 
+.section_about_text:last-child {
+  margin: 0;
+}
+
 .footer {
   width: 1000px;
-  height: 98px;
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -393,11 +356,10 @@ li.footer_menu-item {
 }
 
 .socials {
-  width: 240px;
-  height: 48px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 48px;
 }
 
 .footer_socials_logo {
